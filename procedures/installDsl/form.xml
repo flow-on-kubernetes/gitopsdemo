@@ -1,0 +1,78 @@
+<!--
+
+     Copyright 2016 Electric Cloud, Inc.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
+<!--
+Each form element represents a procedure parameter.
+The corresponding procedure parameters will be created automatically when
+the plugin in installed and promoted.
+
+formElement nested elements:
+============================
+property:   formal parameter name
+type    :   entry|textarea|checkbox|select|radio|credential
+label   :   String-type. Parameter label value
+required:   1|0
+value   : Parameter default value
+documentation : Help text for the parameter
+-->
+<editor>
+  <formElement>
+    <type>entry</type>
+    <label>Artifact Name</label>
+    <property>artName</property>
+    <required>1</required>
+    <value>com.electriccloud:EC-dslDeploy</value>
+    <documentation>Artifact name that contains the DSL code</documentation>
+  </formElement>
+  <formElement>
+    <type>entry</type>
+    <label>Artifact Version</label>
+    <property>artVersion</property>
+    <value></value>
+    <required>0</required>
+    <documentation>Artifact version that contains the DSL code. No version indicates latest.</documentation>
+  </formElement>
+  <formElement>
+    <type>entry</type>
+    <label>Server Pool or Resource</label>
+    <property>pool</property>
+    <required>1</required>
+    <value>local</value>
+    <documentation>Server pool to use for a cluster setup.</documentation>
+  </formElement>
+  <formElement>
+    <type>checkbox</type>
+    <label>Retrieve on all server nodes</label>
+    <property>allNodes</property>
+    <required>1</required>
+    <checkedValue>true</checkedValue>
+    <uncheckedValue>false</uncheckedValue>
+    <initiallyChecked>1</initiallyChecked>
+    <value>false</value>
+    <documentation>If you have local workspace, you want to check this option so
+      the artifact retrieve is performed on all nodes.</documentation>
+  </formElement>
+  <formElement>
+    <type>entry</type>
+    <label>Overwrite mode</label>
+    <property>overwrite</property>
+    <required>0</required>
+    <value>0</value>
+    <documentation>Overwrite mode, remove nonexistent in DSL elements</documentation>
+  </formElement>
+	<!--Add more parameters here-->
+</editor>
